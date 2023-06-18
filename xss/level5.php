@@ -15,8 +15,10 @@
 	<?php
 		echo "<a href=\"";
 		if(isset($_GET['name'])){
-		$name = $_GET['name'];
-		echo $name;
+		$data = $_GET['name'];
+		$input = str_replace("<", "&lt;", $data);
+    	$input = str_replace(">", "&gt;", $input);
+		echo $input;
 		}
 	echo "\">link</a>";
 	echo "\n";
