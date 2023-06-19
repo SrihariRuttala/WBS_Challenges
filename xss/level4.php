@@ -17,7 +17,9 @@
 	<?php
 		echo "var \$a=\"";
 		if(isset($_GET['name'])){
-		$name = $_GET['name'];
+		$data = $_GET['name'];
+		$input = str_replace("<", "&lt;", $data);
+    	$name = str_replace(">", "&gt;", $input);
 		echo $name;
 		}
 	echo "\";";

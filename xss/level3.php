@@ -17,8 +17,11 @@
 	<?php
 		echo "<img src=\"";
 		if(isset($_GET['name'])){
-		$name = $_GET['name'];
-		$name = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $name);
+		$data = $_GET['name'];
+		$input = str_replace("<", "&lt;", $data);
+    	$name = str_replace(">", "&gt;", $input);
+
+		// $name = preg_replace('#<script(.*?)>(.*?)</script>#is', '', $name);
 		echo $name;
 		}
 	echo "\">";
